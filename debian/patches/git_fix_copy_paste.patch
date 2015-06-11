@@ -1,0 +1,20 @@
+--- a/src/nemo-list-view.c	2015-01-08 13:28:04.735661200 +0100
++++ b/src/nemo-list-view.c	2015-01-08 13:28:40.423659930 +0100
+@@ -1254,7 +1254,7 @@
+ 	view->details->last_sort_attr = sort_attr;
+ }
+ 
+-static void
++static gboolean
+ editable_focus_out_cb (GtkWidget *widget,
+ 		       GdkEvent *event,
+ 		       gpointer user_data)
+@@ -1265,6 +1265,8 @@
+ 
+ 	nemo_view_set_is_renaming (NEMO_VIEW (view), FALSE);
+ 	nemo_view_unfreeze_updates (NEMO_VIEW (view));
++
++	return FALSE;
+ }
+ 
+ static void

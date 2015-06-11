@@ -1,0 +1,14 @@
+Maintained by Andrew <andrew@webupd8.org>
+Index: nemo-1.7.6/data/nemo.desktop.in.in
+===================================================================
+--- nemo-1.7.6.orig/data/nemo-autostart.desktop.in	2013-05-04 10:02:46.885816391 +1000
++++ nemo-1.7.6/data/nemo-autostart.desktop.in	2013-05-04 10:02:46.882483057 +1000
+@@ -3,6 +3,6 @@
+ Name=Nemo
+ Comment=Start Nemo desktop at log in
+ Exec=nemo -n
+-OnlyShowIn=X-Cinnamon;
+ AutostartCondition=GSettings org.nemo.desktop show-desktop-icons
+-NoDisplay=true
++X-GNOME-Autostart-Delay=2
++NoDisplay=false

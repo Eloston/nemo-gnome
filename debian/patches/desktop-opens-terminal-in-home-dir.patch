@@ -1,0 +1,14 @@
+Maintained by Andrew <andrew@webupd8.org>
+Index: nemo/src/nemo-view.c
+===================================================================
+--- nemo.orig/src/nemo-view.c	2013-08-21 10:22:01.527125038 +1000
++++ nemo/src/nemo-view.c	2013-08-21 10:22:01.510458372 +1000
+@@ -6914,7 +6914,7 @@
+ 		nemo_file_list_free (selection);
+ 	} else {
+         if (g_file_has_uri_scheme (g_file_new_for_uri (nemo_view_get_uri (view)), "x-nemo-desktop")) {
+-            open_in_terminal (nemo_get_desktop_directory ());
++            open_in_terminal (g_get_home_dir ());
+         } else {
+             open_in_terminal (g_filename_from_uri(nemo_view_get_uri(view), NULL, NULL));
+         }

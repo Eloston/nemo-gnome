@@ -1,0 +1,54 @@
+Maintained by Andrew <andrew@webupd8.org>
+Index: nemo/src/libnemo-private/nemo-icon-container.c
+# Fix desktop icon style
+===================================================================
+--- nemo-2.2.0.orig/libnemo-private/nemo-icon-container.c 	2014-05-04 10:02:46.885816391 +1000
++++ nemo-2.2.0/libnemo-private/nemo-icon-container.c	2014-05-04 10:02:46.882483057 +1000
+@@ -8518,8 +8518,13 @@
+ 	if (is_desktop) {
+ 		GtkStyleContext *context;
+ 
+-		context = gtk_widget_get_style_context (GTK_WIDGET (container));
+-		gtk_style_context_add_class (context, "nemo-desktop");
++		context = gtk_widget_get_style_context (GTK_WIDGET (container));		
++		if (gtk_style_context_has_class (context, "nemo-desktop")) {
++			gtk_style_context_add_class (context, "nemo-desktop");
++		}
++		else {
++			gtk_style_context_add_class (context, "nautilus-desktop");
++		}				
+ 	}
+ }
+
+--- nemo-2.2.0.orig/libnemo-private/nemo-icon-canvas-item.c 	2014-05-04 10:02:46.885816391 +1000
++++ nemo-2.2.0/libnemo-private/nemo-icon-canvas-item.c	2014-05-04 10:02:46.882483057 +1000
+@@ -476,7 +476,12 @@
+ 
+ 	gtk_style_context_save (context);
+ 		
+-        gtk_style_context_add_class (context, "nemo-canvas-item");
++	if (gtk_style_context_has_class (context, "nemo-canvas-item")) {
++		gtk_style_context_add_class (context, "nemo-canvas-item");
++	}
++	else {
++		gtk_style_context_add_class (context, "nautilus-canvas-item");
++	}
+ 
+ 	/* Assume we're updated so canvas item data is right */
+ 
+@@ -1487,8 +1492,12 @@
+ 
+ 	context = gtk_widget_get_style_context (GTK_WIDGET (container));
+ 	gtk_style_context_save (context);		
+-
+-	gtk_style_context_add_class (context, "nemo-canvas-item");
++	if (gtk_style_context_has_class (context, "nemo-canvas-item")) {
++		gtk_style_context_add_class (context, "nemo-canvas-item");
++	}
++	else {
++		gtk_style_context_add_class (context, "nautilus-canvas-item");
++	}
+ 
+ 	icon_rect = icon_item->details->canvas_rect;
+ 	temp_surface = map_surface (icon_item);
+

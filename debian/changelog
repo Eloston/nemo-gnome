@@ -1,112 +1,12 @@
-nemo (2.8.6.19-daschuer) trusty; urgency=low
-  
-  * Merged with nemo 2.8.5 
- 
- -- Daniel Schürmann <daschuer@gmx.de>  Fri, 27 Nov 2015 17:27:57 +0000
+nemo (2.8.6-1~gnome) stretch; urgency=low
 
-nemo (2.8.5.18-daschuer) trusty; urgency=low
-  
-  * Merged with nemo 2.8.5 
- 
- -- Daniel Schürmann <daschuer@gmx.de>  Fri, 20 Nov 2015 17:27:57 +0000
+  * Based off of 2.8.6.19-daschuer from branch nemo_314_merge_nemo_base
 
-nemo (2.8.4.17-daschuer) trusty; urgency=low
-  
-  * Merged with nemo 2.8.4 
- 
- -- Daniel Schürmann <daschuer@gmx.de>  Thu, 12 Nov 2015 09:38:15 +0000
+ -- Eloston <eloston@mail.com>  Thu, 17 Dec 2015 00:00:00 +0000
 
-nemo (2.8.3.16-daschuer) trusty; urgency=low
-  
-  * Merged with nemo 2.8.3 
- 
- -- Daniel Schürmann <daschuer@gmx.de>  Wed, 11 Nov 2015 18:55:34 +0000
+nemo (2.6.5-1~gnome) jessie; urgency=low
 
-nemo (2.8.2.15-daschuer) trusty; urgency=low
-  
-  * Merged with nemo 2.8.2 
- 
- -- Daniel Schürmann <daschuer@gmx.de>  Mon, 09 Nov 2015 09:55:12 +0000
+  * Based off of nemo master branch source 2015-06-09 and 2.6.5-2~webupd8~vivid02
 
-nemo (2.8.1.14-daschuer) trusty; urgency=low
-  
-  * Merged with nemo 2.8.1 
- 
- -- Daniel Schürmann <daschuer@gmx.de>  Mon, 26 Oct 2015 20:15:00 +0100
+ -- Eloston <eloston@mail.com>  Tue, 09 Jun 2015 00:00:00 +0000
 
-nemo (2.6.7.13-daschuer) trusty; urgency=low
-  
-  * remove double special location bar 
-  * Improve Plug-In configuartion
- 
- -- Daniel Schürmann <daschuer@gmx.de>  Wed, 16 Sep 2015 20:15:00 +0100
-
-nemo (2.6.7.12-daschuer) trusty; urgency=low
-  
-  * remove cinnamon-translations from dependency
-  * change versioning to be newer than upstream
- 
- -- Daniel Schürmann <daschuer@gmx.de>  Tue, 5 Aug 2015 21:12:00 +0100
-
-nemo (2.6.7-daschuer11) trusty; urgency=low
-  
-  * fixed compiling for Cinnamon 
- 
- -- Daniel Schürmann <daschuer@gmx.de>  Tue, 4 Aug 2015 22:18:00 +0100
-
-nemo (2.6.7-daschuer10) trusty; urgency=low
-  
-  * Merged with nemo 2.6.7
-  * Added translations 
- 
- -- Daniel Schürmann <daschuer@gmx.de>  Tue, 4 Aug 2015 20:47:00 +0100
-
-nemo (2.5.1-daschuer9) trusty; urgency=low
-  
-  * fix conditional Tracker support  
- 
- -- Daniel Schürmann <daschuer@gmx.de>  Tue, 14 Apr 2015 21:35:00 +0100
-
-nemo (2.5.1-daschuer8) trusty; urgency=low
-  
-  * Merged wit Nautilus 3.12 
- 
- -- Daniel Schürmann <daschuer@gmx.de>  Mon, 13 Apr 2015 19:49:00 +0100
-
-nemo (2.5.1-daschuer7) trusty; urgency=low
-  
-  * Merged wit Nautilus 3.10 
- 
- -- Daniel Schürmann <daschuer@gmx.de>  Sun, 22 Mar 2015 22:52:00 +0100
-
-nemo (2.5.1-daschuer6) trusty; urgency=low
-  
-  * Improved diplay of long paths in property window
-  * Follow symlinks when searching 
- 
- -- Daniel Schürmann <daschuer@gmx.de>  Wed, 11 Feb 2015 21:22:10 +0100
-
-nemo (2.5.1-daschuer5) trusty; urgency=low
-  
-  * Version 5, based on nemo 2.5.1
- 
- -- Daniel Schürmann <daschuer@gmx.de>  Tue, 10 Feb 2015 20:02:24 +0100
-
-nemo (2.5.1-daschuer4) trusty; urgency=low
-  
-  * Version 4, based on nemo 2.5.1
- 
- -- Daniel Schürmann <daschuer@gmx.de>  Sun, 9 Feb 2015 20:56:00 +0100
-
-
-nemo (2.5.1-daschuer3) trusty; urgency=low
-  
-  * Version 3, based on nemo 2.5.1
- 
- -- Daniel Schürmann <daschuer@gmx.de>  Mon, 19 Jan 2015 20:56:00 +0100
-
-nemo (2.4.3-daschuer2) trusty; urgency=low
-  
-  * Initial version, based on nemo 2.4.2
- 
- -- Daniel Schürmann <daschuer@gmx.de>  Sun, 11 Jan 2015 18:43:00 +0000

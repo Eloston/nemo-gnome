@@ -1,0 +1,27 @@
+From 0618af5a154cff26c7a04b303abcbeec2a8ca10d Mon Sep 17 00:00:00 2001
+From: Lars Uebernickel <lars.uebernickel@canonical.com>
+Date: Mon, 6 Oct 2014 13:07:51 +0200
+Subject: [PATCH] properties-window: set max-width for value labels
+
+Not setting it can lead to very wide windows, because gtk doesn't
+enforce a maximum window size anymore.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=732117
+---
+ src/nemo-properties-window.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/nemo-properties-window.c b/src/nemo-properties-window.c
+index 3b15dd9..631c456 100644
+--- a/src/nemo-properties-window.c
++++ b/src/nemo-properties-window.c
+@@ -1217,6 +1217,7 @@
+ 
+ 	if (ellipsize_mode != PANGO_ELLIPSIZE_NONE) {
+ 		gtk_widget_set_hexpand (label_field, TRUE);
++		gtk_label_set_max_width_chars (GTK_LABEL (label_field), 24);
+ 	}
+ 
+ 	if (sibling != NULL) {
+-- 
+2.1.0
