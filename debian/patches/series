@@ -28,3 +28,4 @@ git_toolbar_dnd.patch
 fix-overlay-scrollbars-preferences-window.patch
 missing-files-potfiles.patch
 fix-bookmarked-shares.patch
+fix-tab-crash.patch
