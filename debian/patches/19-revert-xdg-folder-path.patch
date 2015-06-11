@@ -1,0 +1,14 @@
+Maintained by Andrew <andrew@webupd8.org>
+diff --git a/data/Makefile.am b/data/Makefile.am
+index 08876b5..2605258 100644
+--- a/data/Makefile.am
++++ b/data/Makefile.am
+@@ -10,7 +10,7 @@
+ 	nemo.desktop.in				\
+ 	nemo-autorun-software.desktop.in
+ 
+-autostartdir     = $(datadir)/applications
++autostartdir     = $(sysconfdir)/xdg/autostart
+ autostart_in_files = nemo-autostart.desktop.in
+ autostart_DATA = $(autostart_in_files:.desktop.in=.desktop)
+

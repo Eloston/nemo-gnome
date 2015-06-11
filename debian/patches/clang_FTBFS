@@ -1,0 +1,86 @@
+Index: nemo/libnemo-private/nemo-action.c
+===================================================================
+--- nemo.orig/libnemo-private/nemo-action.c	2014-07-10 15:30:54.225111184 +0200
++++ nemo/libnemo-private/nemo-action.c	2014-08-13 12:43:54.746186931 +0200
+@@ -1131,7 +1131,7 @@
+     const gchar *orig_label = nemo_action_get_orig_label (action);
+ 
+     if (orig_label == NULL)
+-        return;
++        return NULL;
+ 
+     action->escape_underscores = TRUE;
+ 
+@@ -1154,7 +1154,7 @@
+     const gchar *orig_tt = nemo_action_get_orig_tt (action);
+ 
+     if (orig_tt == NULL)
+-        return;
++        return NULL;
+ 
+     action->escape_underscores = FALSE;
+ 
+@@ -1398,4 +1398,4 @@
+ out:
+ 
+     return selection_type_show && extension_type_show && condition_type_show;
+-}
+\ No newline at end of file
++}
+Index: nemo/src/nemo-icon-view.c
+===================================================================
+--- nemo.orig/src/nemo-icon-view.c	2014-08-13 12:55:05.057329740 +0200
++++ nemo/src/nemo-icon-view.c	2014-08-13 12:55:24.236559088 +0200
+@@ -1223,7 +1223,7 @@
+ static NemoZoomLevel
+ nemo_icon_view_get_default_zoom_level (NemoView *view)
+ {
+-    g_return_if_fail (NEMO_IS_ICON_VIEW (view));
++    g_return_val_if_fail (NEMO_IS_ICON_VIEW (view), NEMO_ZOOM_LEVEL_NULL);
+ 
+     return get_default_zoom_level(NEMO_ICON_VIEW (view));
+ }
+Index: nemo/src/nemo-list-view.c
+===================================================================
+--- nemo.orig/src/nemo-list-view.c	2014-08-13 12:58:54.944092599 +0200
++++ nemo/src/nemo-list-view.c	2014-08-13 12:59:08.207559618 +0200
+@@ -3112,7 +3112,7 @@
+ static NemoZoomLevel
+ nemo_list_view_get_default_zoom_level (NemoView *view)
+ {
+-    g_return_if_fail (NEMO_IS_LIST_VIEW (view));
++    g_return_val_if_fail (NEMO_IS_LIST_VIEW (view), NEMO_ZOOM_LEVEL_NULL);
+ 
+     return get_default_zoom_level();
+ }
+Index: nemo/src/nemo-notebook.c
+===================================================================
+--- nemo.orig/src/nemo-notebook.c	2014-05-15 16:53:15.584459131 +0200
++++ nemo/src/nemo-notebook.c	2014-08-13 13:04:03.927677174 +0200
+@@ -51,11 +51,13 @@
+ static void nemo_notebook_remove	 (GtkContainer *container,
+ 					  GtkWidget *tab_widget);
+ 
++#if 0
+ static const GtkTargetEntry url_drag_types[] = 
+ {
+ 	{ NEMO_ICON_DND_GNOME_ICON_LIST_TYPE, 0, NEMO_ICON_DND_GNOME_ICON_LIST },
+ 	{ NEMO_ICON_DND_URI_LIST_TYPE, 0, NEMO_ICON_DND_URI_LIST },
+ };
++#endif
+ 
+ enum
+ {
+Index: nemo/src/nemo-view.c
+===================================================================
+--- nemo.orig/src/nemo-view.c	2014-08-13 12:32:26.473804069 +0200
++++ nemo/src/nemo-view.c	2014-08-13 13:09:09.607394547 +0200
+@@ -708,7 +708,7 @@
+ NemoZoomLevel
+ nemo_view_get_default_zoom_level (NemoView *view)
+ {
+-    g_return_if_fail (NEMO_IS_VIEW (view));
++    g_return_val_if_fail (NEMO_IS_VIEW (view), NEMO_ZOOM_LEVEL_NULL);
+ 
+     if (!nemo_view_supports_zooming (view)) {
+         return -1;

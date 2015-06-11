@@ -1,275 +1,388 @@
-nemo (2.6.5) rafaela; urgency=medium
+nemo (2.6.5-1~gnome) jessie; urgency=low
 
-  [ leigh123linux ]
-  * add runtime requirement for libcinnamon-desktop4
+  * Based off of nemo master branch source 2015-06-09 and 2.6.5-2~webupd8~vivid02
 
-  [ mtwebster ]
-  * Fix a couple build warnings
-  * nemo-application: register with org.gnome.SessionManager - this should fix the race condition where c-s-d dies before nemo does, causing all of our icons to revert to fallbacks briefly.
+ -- Eloston <eloston@mail.com>  Tue, 09 Jun 2015 00:00:00 +0000
 
- -- Clement Lefebvre <root@linuxmint.com>  Wed, 27 May 2015 10:25:57 +0200
+nemo (2.6.5-2~webupd8~vivid02) vivid; urgency=high
 
-nemo (2.6.4) rafaela; urgency=medium
+  * New upstream release
+  * Sync rules / gir1.2-nemo-3.0.install.in / nemo.install with 
+    original Nemo packaging
+  * Refreshed patches
+  * Added new custom action under debian/actions: 
+    new-launcher.nemo_action - this only works if gnome-panel is 
+    installed
+  * Added icon for set-as-background.nemo_action (it doesn't have
+    one by default)
+  * Added fix-overlay-scrollbars-preferences-window.patch
+  * Adde missing-files-potfiles.patch from Ubuntu Wily
 
-  [ Michael Webster ]
-  * menus: Always show icons in Open With and Templates submenus.
-  * nemo-bookmark-list: make sure to keep the bookmarks file writable by the user (and not just root) when running nemo as root.
-  * fix build warning, fix prototype name.
+ -- Alin Andrei <webupd8@gmail.com>  Wed, 20 May 2015 12:02:44 +0200
 
-  [ leigh123linux ]
-  * Update version for cinnamon-desktop build dep
+nemo (2.4.5-2~webupd8~vivid2) vivid; urgency=medium
 
- -- Clement Lefebvre <root@linuxmint.com>  Mon, 25 May 2015 10:40:14 +0200
+  * Refreshed 22-draw-desktop-background.patch from Nautilus
+  * Added 0001-application-use-correct-order-to-watch-for-GSettings.patch
+    from Nautilus, modified for Nemo, to get wallpaper changing to
+    work properly in Vivid
+  * Bump Standards-Version to 3.9.6
 
-nemo (2.6.3) rafaela; urgency=medium
+ -- Alin Andrei <webupd8@gmail.com>  Thu, 12 Mar 2015 12:33:27 +0200
 
-  [ leigh123linux ]
-  * update cinnamon-desktop min version
-  * bump it again
+nemo (2.4.5-2~webupd8~vivid1) vivid; urgency=medium
 
- -- Clement Lefebvre <root@linuxmint.com>  Thu, 21 May 2015 12:44:03 +0200
+  * Upload for Vivid
+  * gir1.2-nemo-3.0.install: add /*/ for arch-specific dir
 
-nemo (2.6.2) rafaela; urgency=medium
+ -- Alin Andrei <webupd8@gmail.com>  Wed, 11 Mar 2015 14:18:39 +0200
 
-  [ Clement Lefebvre ]
-  * Gettext fix: Due to genre/plural, in many languages, adjectives are not translatable on their own. They need to relate to a noun.
-  * Gettext: Simplified msgids in file operation queue to make them easier to translate
-  * Updated pot
+nemo (2.4.5-2~webupd8~utopic0) utopic; urgency=medium
 
-  [ Michael Webster ]
-  * Adapt Nemo to deal with problem situations with the user thumbnail cache: - Added --fix-cache command line option (must be run as root) - Added quick check at startup to detect major problems and disable thumbnailing   until fixed. - Individual thumbnailed files are checked on the fly for permission issues. - When a problem is detected, an infobar appears, offering to fix the problem, or   ignore it.
-  * Have 'dismiss' last for Nemo's lifespan.
-  * thumbnails: Remove an orphan comment from previous commits, fix wording of the --fix-cache command-line option.
+  * New upstream bugfix release:
+    - Fixed the growing size of the nemo statusbar in each new version of gtk
 
- -- Clement Lefebvre <root@linuxmint.com>  Thu, 21 May 2015 11:06:16 +0200
+ -- Alin Andrei <webupd8@gmail.com>  Tue, 20 Jan 2015 16:22:17 +0200
 
-nemo (2.6.1) rafaela; urgency=medium
+nemo (2.4.4-2~webupd8~trusty1) trusty; urgency=medium
 
-  * Packaging: Fixed hardcoded gir typelib path
+  * Added shade-rubberbands-by-wallpaper.patch (thanks to
+    Tasos Sahanidis)
 
- -- Clement Lefebvre <root@linuxmint.com>  Wed, 20 May 2015 09:26:24 +0200
+ -- Alin Andrei <webupd8@gmail.com>  Mon, 19 Jan 2015 11:54:08 +0200
 
-nemo (2.6.0) rafaela; urgency=medium
+nemo (2.4.4-2~webupd8~utopic0) utopic; urgency=medium
 
-  * 2.6.0 
+  * New upstream bugfix release
+  * Changes since 2.4.2:
+    - Never allow root nemo to manage the desktop
+    - list-view: Don't reset zoom level when syncing statusbar 
+      zoom widget state
+  * Refreshed 12_unity_launcher_support_and_removed_cinnamon.patch
 
- -- Clement Lefebvre <root@linuxmint.com>  Tue, 19 May 2015 17:34:50 +0200
+ -- Alin Andrei <webupd8@gmail.com>  Mon, 24 Nov 2014 15:24:39 +0200
 
-nemo (2.5.1) unstable; urgency=medium
+nemo (2.4.2-2~webupd8~trusty0) trusty; urgency=medium
 
-  * 2.5.x
+  * New upstream bugfix release
 
- -- Clement Lefebvre <root@linuxmint.com>  Mon, 19 Jan 2015 16:55:00 +0100
+ -- Alin Andrei <webupd8@gmail.com>  Wed, 12 Nov 2014 14:03:21 +0200
 
-nemo (2.4.4) rebecca; urgency=medium
+nemo (2.4.1-2~webupd8~utopic0) utopic; urgency=medium
 
-  * list-view: Don't reset zoom level when syncing statusbar zoom widget state.
+  * New upstream bugfix release
+  * Disable reenable-right-clik-context-menu-on-nemo-toolbar-nav-buttons.patch
+    (applied upstream)
 
- -- Clement Lefebvre <root@linuxmint.com>  Mon, 24 Nov 2014 09:11:57 +0100
+ -- Alin Andrei <webupd8@gmail.com>  Tue, 11 Nov 2014 12:37:05 +0200
 
-nemo (2.4.3) rebecca; urgency=medium
+nemo (2.4.0-2~webupd8~trusty1) trusty; urgency=medium
 
-  * Never allow root nemo to manage the desktop.
+  * Added reenable-right-clik-context-menu-on-nemo-toolbar-nav-buttons.patch
 
- -- Clement Lefebvre <root@linuxmint.com>  Sat, 22 Nov 2014 17:17:30 +0100
+ -- Alin Andrei <webupd8@gmail.com>  Thu, 06 Nov 2014 14:55:31 +0200
 
-nemo (2.4.2) rebecca; urgency=medium
+nemo (2.4.0-2~webupd8~utopic0) utopic; urgency=medium
 
-  * icon-container: Fix regression when renaming files in certain views -
-  * Revert "places sidebar: set cells to a fixed height, seems to prevent residual"
+  * New upstream release
+  * disabled ubuntu_ui_fixes.patch, 29-revert-colored-icons1.patch
+    and 30-revert-colored-icons2.patch
+  * disabled clang_FTBFS, applied upstream
+  * 12_unity_launcher_support_and_removed_cinnamon.patch:
+    nemo_bookmark_list_new -> nemo_bookmark_list_get_default
+  * refreshed 21-gsettings-use-gnome-instead-of-cinnamon.patch
+  * move usr/share/polkit-1/actions from nemo to nemo-data
+  * use Nemo for privacy Gsettings instead of Cinnamon
 
- -- Clement Lefebvre <root@linuxmint.com>  Tue, 11 Nov 2014 22:35:46 +0100
+ -- Alin Andrei <webupd8@gmail.com>  Mon, 03 Nov 2014 11:58:17 +0200
 
-nemo (2.4.1) rebecca; urgency=medium
+nemo (2.2.4-3~webupd8~utopic1) utopic; urgency=medium
 
-  * Show UP button by default in the toolbar
-  * Re-enabled the right click context menu on nemo toolbar navigation buttons
-  * Recent files: show same open-with entries as normal folders
-  * Sidebar: Fix expander state
-  * Sidebar: workaround for icon render issue.  Don't allow the tree view to be unrestrained vertically.
-  * Places sidebar: set cells to a fixed height, seems to prevent residual render issues
+  * Rebuild
 
- -- Clement Lefebvre <root@linuxmint.com>  Tue, 11 Nov 2014 11:07:57 +0100
+ -- Alin Andrei <webupd8@gmail.com>  Thu, 16 Oct 2014 18:08:44 +0200
 
-nemo (2.4.0) rebecca; urgency=medium
+nemo (2.2.4-3~webupd8~utopic0) utopic; urgency=medium
 
-  * 2.4.0
+  * Upload for Utopic
 
- -- Clement Lefebvre <root@linuxmint.com>  Fri, 31 Oct 2014 16:23:56 +0100
+ -- Alin Andrei <webupd8@gmail.com>  Thu, 11 Sep 2014 11:27:49 +0200
 
-nemo (2.3.0) unstable; urgency=medium
+nemo (2.2.4-3~webupd8~trusty0) trusty; urgency=medium
 
-  * 2.3.0
+  * Sync changes from Ubuntu Utopic:
+    - control: 
+        - fixed descriptions
+        - build-depend on python-dev
+    - updated rules
+    - added clang_FTBFS patch
+    - move polkit policy from nemo-data to nemo to avoid later incompatibility
+      with Ubuntu's Nemo package -> nemo Conflicts: nemo-data (<< 2.2.4-2~)
 
- -- Clement Lefebvre <root@linuxmint.com>  Fri, 27 Jun 2014 14:44:35 +0100
+ -- Alin Andrei <webupd8@gmail.com>  Thu, 21 Aug 2014 11:27:49 +0200
 
-nemo (2.2.3) qiana; urgency=medium
+nemo (2.2.4-1~webupd8~trusty0) trusty; urgency=medium
 
-  * Merging debian/patches
-  * Show unmount progress notifications when ejecting a drive
-  * Fix #627 - crash when unmounting archives.  This is a temporary fix - pull request coming for permanent fix.
-  * places-sidebar: render eject icon correctly in hidpi
-  * Open-with dialog: Bugfix (Fixes #631) and a few improvements
-  * nemo-links: add desktop file hack for desktop session names.
-  * Fix sample nemo action to work with filenames with spaces.
-  * Really fix the sample action
-  * Clean up orphaned gtk bookmarks at startup.
-  * Revert "Clean up orphaned gtk bookmarks at startup."
-  * nemo-actions: Add flag to escape spaces in file paths.
-  * Use GtkRevealer for search bar.
-  * nemo-file: compare_by_display_name - handle null strings gracefully.
+  * new upstream release
+  * updated 12_unity_launcher_support_and_removed_cinnamon.patch 
+    to work with recent Nemo bookmark changes
 
- -- Clement Lefebvre <root@linuxmint.com>  Fri, 27 Jun 2014 14:43:10 +0100
+ -- Alin Andrei <webupd8@gmail.com>  Tue, 19 Aug 2014 13:54:21 +0200
 
-nemo (2.2.2) qiana; urgency=medium
+nemo (2.2.3-0~webupd8~trusty0) trusty; urgency=medium
 
-  * 2.2.2
+  * new upstream release
+  * disabled 31-fix-browsing-windows-networks.patch (applied upstream)
+  * refreshed 29-revert-colored-icons1.patch
 
- -- Clement Lefebvre <root@linuxmint.com>  Wed, 21 May 2014 12:36:20 +0100
+ -- Alin Andrei <webupd8@gmail.com>  Fri, 27 Jun 2014 17:12:47 +0200
 
-nemo (2.2.1) qiana; urgency=medium
+nemo (2.2.2-0~webupd8~trusty2) trusty; urgency=medium
 
-  * 2.2.1
+  * added 31-fix-browsing-windows-networks.patch
 
- -- Clement Lefebvre <root@linuxmint.com>  Thu, 01 May 2014 14:35:34 +0100
+ -- Alin Andrei <webupd8@gmail.com>  Fri, 27 Jun 2014 11:12:29 +0200
 
-nemo (2.2.0) qiana; urgency=medium
+nemo (2.2.2-0~webupd8~trusty1) trusty; urgency=medium
 
-  * 2.2.0
+  * new upstream release:
+    - added 29-revert-colored-icons1.patch and 30-revert-colored-icons2.patch - 
+      reverts colored icons for the Nemo toolbar (use symbolic monochrome 
+      icons instead)
 
- -- Clement Lefebvre <root@linuxmint.com>  Sat, 12 Apr 2014 15:50:14 +0100
+ -- Alin Andrei <webupd8@gmail.com>  Tue, 27 May 2014 16:56:32 +0200
 
-nemo (2.0.8) petra; urgency=low
+nemo (2.2.2-0~webupd8~trusty0) trusty; urgency=medium
 
-  * 2.0.8
+  * new upstream release
 
- -- Clement Lefebvre <root@linuxmint.com>  Mon, 25 Nov 2013 18:37:31 +0000
+ -- Alin Andrei <webupd8@gmail.com>  Wed, 21 May 2014 15:20:19 +0200
 
-nemo (2.0.7) petra; urgency=low
+nemo (2.2.1-0~webupd8~trusty2) trusty; urgency=medium
 
-  * 2.0.7
+  * 24_remove_only_show_in.patch: updated patch to add a 2 second delay to Nemo at startup, 
+    this hopefully fixing the issue with "Change desktop background" not being displayed 
+    for some users
 
- -- Clement Lefebvre <root@linuxmint.com>  Sat, 23 Nov 2013 13:39:58 +0000
+ -- Alin Andrei <webupd8@gmail.com>  Tue, 02 May 2014 16:53:19 +0200
 
-nemo (2.0.6) petra; urgency=low
+nemo (2.2.1-0~webupd8~trusty1) trusty; urgency=medium
 
-  * 2.0.6
+  * added 28-fix-desktop-icon-style.patch - fixes black icons text (and gets the nemo 
+    desktop to be styled just like nautilus, if the theme doesn't have a specific 
+    nemo style)
 
- -- Clement Lefebvre <root@linuxmint.com>  Mon, 11 Nov 2013 13:42:09 +0000
+ -- Alin Andrei <webupd8@gmail.com>  Fri, 02 May 2014 13:52:36 +0200
 
-nemo (2.0.5) petra; urgency=low
+nemo (2.2.1-0~webupd8~trusty0) trusty; urgency=medium
 
-  * 2.0.5
+  * new upstream bugfix release
+  * diasble 27_fix-hidpi-mode-crash-when-using-icon-emblems-on-odd-shaped-thumbnails.patch
+    (applied upstream)
 
- -- Clement Lefebvre <root@linuxmint.com>  Sun, 03 Nov 2013 15:53:05 +0000
+ -- Alin Andrei <webupd8@gmail.com>  Thu, 01 May 2014 17:32:24 +0200
 
-nemo (2.0.4) petra; urgency=low
+nemo (2.2.0-0~webupd8~trusty6) trusty; urgency=medium
 
-  * 2.0.4
+  * fixed set-as-background nemo action to work with paths/filenames with spaces
+  * added 27_fix-hidpi-mode-crash-when-using-icon-emblems-on-odd-shaped-thumbnails.patch 
+    to fix https://github.com/linuxmint/nemo/issues/598
 
- -- Clement Lefebvre <root@linuxmint.com>  Thu, 31 Oct 2013 13:32:20 +0000
+ -- Alin Andrei <webupd8@gmail.com>  Wed, 30 Apr 2014 15:10:45 +0200
 
-nemo (2.0.3) petra; urgency=low
+nemo (2.2.0-0~webupd8~trusty) trusty; urgency=medium
 
-  * 2.0.3
+  * new upstream release
+  * refreshed 16_unity_new_documents.patch
+  * refreshed 24_remove_only_show_in.patch
+  * disabled 24_remove_only_show_in.patch, it was applied upstream
+  * disabled 25_fix_bad_positioning_of_rename_window_in_some_gtk310_views.patch, 
+    it was applied upstream
+  * disabled 26_stop_gtk_stock_deprecated_errors_for_gtk_3.10.patch, it was applied upstream
+  * depend on python-polib and python-gi
 
- -- Clement Lefebvre <root@linuxmint.com>  Tue, 29 Oct 2013 10:40:51 +0000
+ -- Alin Andrei <webupd8@gmail.com>  Wed, 23 Apr 2014 14:38:38 +1000
 
-nemo (2.0.2) petra; urgency=low
+nemo (2.0.8-0~webupd8~trusty3) trusty; urgency=medium
 
-  * 2.0.2
+  * fix change background action for trusty under Unity and GNOME Shell. Not fixed 
+    for GNOME Flashback
 
- -- Clement Lefebvre <root@linuxmint.com>  Tue, 22 Oct 2013 14:20:41 +0100
+ -- Alin Andrei <webupd8@gmail.com>  Wed, 12 Mar 2014 14:38:38 +1000
 
-nemo (2.0.1) petra; urgency=low
+nemo (2.0.8-0~webupd8~trusty2) trusty; urgency=medium
 
-  * 2.0.1
+  * add 25_fix_bad_positioning_of_rename_window_in_some_gtk310_views.patch and
+    26_stop_gtk_stock_deprecated_errors_for_gtk_3.10.patch
 
- -- Clement Lefebvre <root@linuxmint.com>  Fri, 18 Oct 2013 15:57:39 +0100
+ -- Alin Andrei <webupd8@gmail.com>  Tue, 06 Feb 2014 14:38:38 +1000
 
-nemo (2.0.0) petra; urgency=low
+nemo (2.0.8-0~webupd8~trusty) trusty; urgency=medium
 
-  * 2.0.0
+  * new upstream release:
+    - Fix passing non-latin uri's to actions
+    - Don't show custom mimetype handlers in the menu
+    - Don't crash when browser mode is off and multiple folders are selected
+    - Don't display actions for special items like desktop icons
+    - list-view: prevent name column from shrinking to uselessness
+    - Fix orphan tooltips in icon view and desktop when deleting items
 
- -- Clement Lefebvre <root@linuxmint.com>  Wed, 02 Oct 2013 16:36:43 +0100
+ -- Alin Andrei <webupd8@gmail.com>  Tue, 26 Nov 2013 14:38:38 +1000
 
-nemo (1.9.1) petra; urgency=low
+nemo (2.0.6-0~webupd8~trusty) trusty; urgency=medium
 
-  * 1.9.1
+  * new upstream release:
+    - Fix action string script, update nemo action translations
+    - When renaming test.folder in listview, select entire filename
 
- -- Clement Lefebvre <root@linuxmint.com>  Mon, 30 Sep 2013 14:21:12 +0100
+ -- Alin Andrei <webupd8@gmail.com>  Tue, 12 Nov 2013 14:38:38 +1000
 
-nemo (1.8.5) olivia; urgency=low
+nemo (2.0.4-0~webupd8~saucy) saucy; urgency=medium
 
-  * 1.8.5
+  * new upstream release
+  * added 24_remove_only_show_in.patch
 
- -- Clement Lefebvre <root@linuxmint.com>  Tue, 20 Aug 2013 14:07:52 +0100
+ -- Alin Andrei <webupd8@gmail.com>  Fri, 01 Nov 2013 14:38:38 +1000
 
-nemo (1.8.4) olivia; urgency=low
+nemo (2.0.3-0~webupd8~precise4) precise; urgency=medium
 
-  * 1.8.4
+  * refreshed patches
+  * 12_unity_launcher_support_and_removed_cinnamon.patch: 
+    - use gnome-desktop instead of cinnamon-desktop
+    - remove "CFLAGS="$CFLAGS -Werror=unused-function -Werror=unused-variable -O3" 
+      as it breaks the Unity patch
+    - fix Unity launcher progress bar: rename nautilus_progress_info_get_current 
+      and nautilus_progress_info_get_total to nemo*
+  * disabled desktop-opens-terminal-in-home-dir.patch
+  * new patch: 19-revert-xdg-folder-path.patch
+  * new patch: 20-use-libgnome-desktop-instead-of-libcinnamon-desktop.patch
+  * new patch: 21-gsettings-use-gnome-instead-of-cinnamon.patch
+  * new patch: 22-draw-desktop-background.patch
+  * new patch: 23_use_system-file-manager_icon.patch
+  * since use-gnome-control-center.patch doesn't seem to apply when it should, add 
+    "actions" folder in debian/ with patched change-background.nemo_action and 
+    set-as-background.nemo_action
+  * depend on cinnamon-translations
+  * probably more
 
- -- Clement Lefebvre <root@linuxmint.com>  Tue, 09 Jul 2013 17:12:40 +0200
+ -- Alin Andrei <webupd8@gmail.com>  Tue, 29 Oct 2013 14:38:38 +1000
 
-nemo (1.8.3) olivia; urgency=low
+nemo (1.8.5-0~13.4~ppa0) raring; urgency=low
 
-  * 1.8.3
+  * New upstream release
 
- -- Clement Lefebvre <root@linuxmint.com>  Sat, 01 Jun 2013 12:55:17 +0100
+ -- Jacob Zimmermann <ppa@jzimm.net>  Wed, 21 Aug 2013 10:31:03 +1000
 
-nemo (1.8.2) olivia; urgency=low
+nemo (1.8.3-0~13.4~ppa1) raring; urgency=low
 
-  * 1.8.2
+  * Removed -flto -Ofast as it seems to cause crashes
+  * Added ignore-new = True to gbp.conf
 
- -- Clement Lefebvre <root@linuxmint.com>  Sun, 19 May 2013 21:08:35 +0100
+ -- Jacob Zimmermann <ppa@jzimm.net>  Thu, 20 Jun 2013 22:24:53 +1000
 
-nemo (1.8.1) olivia; urgency=low
+nemo (1.8.3-0~13.4~ppa0) raring; urgency=low
 
-  * 1.8.1
+  * New upstream release 
 
- -- Clement Lefebvre <root@linuxmint.com>  Thu, 09 May 2013 13:29:40 +0100
+ -- Jacob Zimmermann <ppa@jzimm.net>  Mon, 03 Jun 2013 11:01:07 +1000
 
-nemo (1.8.0) olivia; urgency=low
+nemo (1.8.2-0~13.4~ppa0) raring; urgency=low
 
-  * 1.8.0
+  * New upstream release
 
- -- Clement Lefebvre <root@linuxmint.com>  Sun, 05 May 2013 13:21:54 +0100
+ -- Jacob Zimmermann <ppa@jzimm.net>  Mon, 20 May 2013 11:26:30 +1000
 
-nemo (1.7.6) olivia; urgency=low
+nemo (1.8.1+rpkg-0~13.4~ppa0) raring; urgency=low
 
-  * 1.7.6
+  * Source code repackaged, removing the bundled debian directory
+  * Added desktop-opens-terminal-in-home-dir.patch
 
- -- Clement Lefebvre <root@linuxmint.com>  Fri, 03 May 2013 17:07:54 +0100
+ -- Jacob Zimmermann <ppa@jzimm.net>  Mon, 13 May 2013 12:44:39 +1000
 
-nemo (1.7.5) olivia; urgency=low
+nemo (1.8.1-0~13.4~ppa0) raring; urgency=low
 
-  * 1.7.5
+  * New upstream release
 
- -- Clement Lefebvre <root@linuxmint.com>  Tue, 30 Apr 2013 16:45:52 +0100
+ -- Jacob Zimmermann <ppa@jzimm.net>  Thu, 09 May 2013 23:20:06 +1000
 
-nemo (1.7.4) olivia; urgency=low
+nemo (1.8.0-0~13.4~ppa0) raring; urgency=low
 
-  * 1.7.4
+  * New upstream release
 
- -- Clement Lefebvre <root@linuxmint.com>  Sat, 27 Apr 2013 20:03:25 +0100
+ -- Jacob Zimmermann <ppa@jzimm.net>  Mon, 06 May 2013 11:23:34 +1000
 
-nemo (1.7.3) olivia; urgency=low
+nemo (1.7.6-0~13.4~ppa0) raring; urgency=low
 
-  * 1.7.3
+  * New upstream release
 
- -- Clement Lefebvre <root@linuxmint.com>  Mon, 15 Apr 2013 14:56:37 +0100
+ -- Jacob Zimmermann <ppa@jzimm.net>  Sat, 04 May 2013 10:09:39 +1000
 
-nemo (1.7.2) olivia; urgency=low
+nemo (1.7.5-0~13.4~ppa0) raring; urgency=low
 
-  * 1.7.2
+  * New upstream release
 
- -- Clement Lefebvre <root@linuxmint.com>  Fri, 22 Mar 2013 14:07:10 +0000
+ -- Jacob Zimmermann <ppa@jzimm.net>  Wed, 01 May 2013 10:27:00 +1000
 
-nemo (1.7.1) olivia; urgency=low
+nemo (1.7.4-0~13.4~ppa0) raring; urgency=low
 
-  * 1.7.1
+  * New upstream release
 
- -- Clement Lefebvre <root@linuxmint.com>  Tue, 19 Feb 2013 16:29:56 +0000
+ -- Jacob Zimmermann <ppa@jzimm.net>  Sun, 28 Apr 2013 10:25:58 +1000
+
+nemo (1.7.3-0ubuntu1~13.4~ppa1) raring; urgency=low
+
+  * Fixed 17_static_unity_quicklist.patch
+
+ -- Jacob Zimmermann <ppa@jzimm.net>  Wed, 17 Apr 2013 10:25:15 +1000
+
+nemo (1.7.3-0ubuntu1~13.4~ppa0) raring; urgency=low
+
+  * New upstream release
+
+ -- Jacob Zimmermann <ppa@jzimm.net>  Tue, 16 Apr 2013 09:00:01 +1000
+
+nemo (1.7.2-0ubuntu1~13.4~ppa4) raring; urgency=low
+
+  * Added patch 15_use_ubuntu_help.patch
+
+ -- Jacob Zimmermann <ppa@jzimm.net>  Mon, 15 Apr 2013 13:02:15 +1000
+
+nemo (1.7.2-0ubuntu1~13.4~ppa3) raring; urgency=low
+
+  * Fixed "Open a New Window" option
+
+ -- Jacob Zimmermann <ppa@jzimm.net>  Sun, 14 Apr 2013 15:33:56 +1000
+
+nemo (1.7.2-0ubuntu1~13.4~ppa2) raring; urgency=low
+
+  * Patch use-gnome-control-center.patch
+
+ -- Jacob Zimmermann <ppa@jzimm.net>  Fri, 12 Apr 2013 12:16:25 +1000
+
+nemo (1.7.2-0ubuntu1~13.4~ppa1) raring; urgency=low
+
+  * Use button style for pathbar buttons
+
+ -- Jacob Zimmermann <ppa@jzimm.net>  Fri, 12 Apr 2013 12:07:05 +1000
+
+nemo (1.7.2-0ubuntu1~13.4~ppa0) raring; urgency=low
+
+  * Switched to quilt format
+  * Imported unity patches
+  * Standards to 3.9.4
+  * Don't depend on cinnamon
+  * nemo depends on nemo-data by source:Version, not binary:Version
+  * Build-depend on libunity-dev
+  * Imported zeitgeist patch 
+  * Added ubuntu-ui-fixes.patch
+
+ -- Jacob Zimmermann <ppa@jzimm.net>  Thu, 11 Apr 2013 23:30:05 +1000
+
+nemo (1.1.2-0ubuntu1~raring1) raring; urgency=medium
+
+  * PPA build
+
+ -- Gwendal Le Bihan <gwendal.lebihan.dev@gmail.com>  Wed, 14 Nov 2012 13:07:21 +0100
 
 nemo (1.1.2) nadia; urgency=low
 
