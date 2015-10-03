@@ -31,6 +31,7 @@ AM_CPPFLAGS =							\
 	-DPREFIX=\""$(prefix)"\" 				\
 	-DSYSCONFDIR=\""$(sysconfdir)"\" 			\
 	-DVERSION="\"$(VERSION)\"" 				\
+    -DNEMO_EXTENSIONDIR=\""$(libdir)/nemo/extensions-3.0"\" \
 	$(DISABLE_DEPRECATED_CFLAGS)                            \
 	$(NULL)
 
@@ -155,8 +156,6 @@ nemo_SOURCES = \
 	nemo-query-editor.h			\
     nemo-script-config-widget.c         \
     nemo-script-config-widget.h         \
-	nemo-search-bar.c			\
-	nemo-search-bar.h			\
 	nemo-self-check-functions.c 	\
 	nemo-self-check-functions.h 	\
     nemo-statusbar.c    \
