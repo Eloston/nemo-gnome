@@ -20,7 +20,7 @@ index b903c3b..9c91fb1 100644
 +Dependencies=gnome-control-center;
  
 -Conditions=desktop;dbus org.Cinnamon;
-+Conditions=desktop;dbus org.gnome.Shell.Screencast;
++Conditions=desktop;
 
 diff --git a/data/set-as-background.nemo_action.in b/data/set-as-background.nemo_action.in
 index b903c6b..9c91fb8 100644
