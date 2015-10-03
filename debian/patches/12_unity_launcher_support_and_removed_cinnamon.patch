@@ -178,9 +178,9 @@ diff --git a/src/Makefile.am b/src/Makefile.am
 index 524c653..95232c4 100644
 --- a/src/Makefile.am
 +++ b/src/Makefile.am
-@@ -30,6 +30,7 @@ INCLUDES =							\
- 	-DSYSCONFDIR=\""$(sysconfdir)"\" 			\
+@@ -33,6 +33,7 @@
  	-DVERSION="\"$(VERSION)\"" 				\
+     -DNEMO_EXTENSIONDIR=\""$(libdir)/nemo/extensions-3.0"\" \
  	$(DISABLE_DEPRECATED_CFLAGS)                            \
 +	$(UNITY_CFLAGS)                            \
  	$(NULL)
@@ -236,7 +236,7 @@ index 97cc8fa..04355d4 100644
  struct _NemoProgressUIHandlerPriv {
  	NemoProgressInfoManager *manager;
  
-@@ -54,6 +62,10 @@
+@@ -54,6 +59,10 @@
  
  	GtkStatusIcon *status_icon;
      gboolean should_show_status_icon;
@@ -246,7 +246,7 @@ index 97cc8fa..04355d4 100644
 +#endif
  };
  
- typedef struct {
+ G_DEFINE_TYPE (NemoProgressUIHandler, nemo_progress_ui_handler, G_TYPE_OBJECT);
 @@ -124,6 +133,220 @@
  
  	gtk_status_icon_set_visible (self->priv->status_icon, self->priv->should_show_status_icon);

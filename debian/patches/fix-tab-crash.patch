@@ -1,12 +1,12 @@
-diff --git a/src/nemo-window-slot.c.orig b/src/nemo-window-slot.c
-index 6a0635b..0cde442 100644
---- a/src/nemo-window-slot.c.orig
+diff --git a/src/nemo-window-slot.c b/src/nemo-window-slot.c
+index 18e27cd..aea7d9c 100644
+--- a/src/nemo-window-slot.c
 +++ b/src/nemo-window-slot.c
-@@ -647,7 +647,6 @@ nemo_window_slot_get_current_uri (NemoWindowSlot *slot)
- 		return g_file_get_uri (slot->location);
- 	}
+@@ -733,7 +733,6 @@ nemo_window_slot_get_current_uri (NemoWindowSlot *slot)
+                return g_file_get_uri (slot->location);
+        }
  
--	g_assert_not_reached ();
- 	return NULL;
+-       g_assert_not_reached ();
+        return NULL;
  }
  
