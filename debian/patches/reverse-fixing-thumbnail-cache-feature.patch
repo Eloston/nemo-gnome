@@ -150,8 +150,8 @@ reverted:
  	nemo-toolbar.h			\
  	nemo-tree-sidebar.c			\
 reverted:
---- b/src/nemo-application.c
-+++ a/src/nemo-application.c
+--- a/src/nemo-application.c
++++ b/src/nemo-application.c
 @@ -69,9 +69,7 @@
  
  #include <sys/types.h>
@@ -162,16 +162,16 @@ reverted:
  #include <glib/gstdio.h>
  #include <glib/gi18n.h>
  #include <gio/gio.h>
-@@ -82,8 +80,6 @@
- #include <gtk/gtk.h>
+@@ -83,8 +81,6 @@
  
  #define GNOME_DESKTOP_USE_UNSTABLE_API
--
--#include <libcinnamon-desktop/gnome-desktop-thumbnail.h>
  
+-#include <libcinnamon-desktop/gnome-desktop-thumbnail.h>
+-
  /* Keep window from shrinking down ridiculously small; numbers are somewhat arbitrary */
  #define APPLICATION_WINDOW_MIN_WIDTH	300
-@@ -119,9 +113,6 @@
+ #define APPLICATION_WINDOW_MIN_HEIGHT	100
+@@ -120,9 +116,6 @@ struct _NemoApplicationPriv {
  	gboolean no_desktop;
  	gchar *geometry;
  
@@ -181,7 +181,7 @@ reverted:
      NotifyNotification *unmount_notify;
  };
  
-@@ -869,7 +860,6 @@
+@@ -813,7 +806,6 @@ nemo_application_local_command_line (GApplication *application,
  	gboolean browser = FALSE;
  	gboolean kill_shell = FALSE;
  	gboolean no_default_window = FALSE;
@@ -189,7 +189,7 @@ reverted:
  	gchar **remaining = NULL;
  	NemoApplication *self = NEMO_APPLICATION (application);
  
-@@ -889,8 +879,6 @@
+@@ -833,8 +825,6 @@ nemo_application_local_command_line (GApplication *application,
  		  N_("Only create windows for explicitly specified URIs."), NULL },
  		{ "no-desktop", '\0', 0, G_OPTION_ARG_NONE, &self->priv->no_desktop,
  		  N_("Do not manage the desktop (ignore the preference set in the preferences dialog)."), NULL },
@@ -198,7 +198,7 @@ reverted:
  		{ "quit", 'q', 0, G_OPTION_ARG_NONE, &kill_shell, 
  		  N_("Quit Nemo."), NULL },
  		{ G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_STRING_ARRAY, &remaining, NULL,  N_("[URI...]") },
-@@ -935,17 +923,6 @@
+@@ -879,17 +869,6 @@ nemo_application_local_command_line (GApplication *application,
  		goto out;
  	}
  
@@ -216,27 +216,7 @@ reverted:
  	DEBUG ("Parsing local command line, no_default_window %d, quit %d, "
  	       "self checks %d, no_desktop %d",
  	       no_default_window, kill_shell, perform_self_check, self->priv->no_desktop);
-@@ -1215,6 +1192,19 @@
- 
- }
- 
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
- static void
- nemo_application_startup (GApplication *app)
- {
-@@ -1279,20 +1269,6 @@
+@@ -1223,20 +1202,6 @@ nemo_application_startup (GApplication *app)
  	 */
  	check_required_directories (self);
  
@@ -257,7 +237,7 @@ reverted:
      if (geteuid() != 0)
          init_desktop (self);
  }
-@@ -1358,39 +1334,3 @@
+@@ -1303,39 +1268,3 @@ nemo_application_get_singleton (void)
                           "register-session", TRUE,
                           NULL);
  }
@@ -297,7 +277,6 @@ reverted:
 -{
 -    return application->priv->ignore_cache_problem;
 -}
-\ No newline at end of file
 reverted:
 --- b/src/nemo-application.h
 +++ a/src/nemo-application.h
@@ -676,14 +655,6 @@ reverted:
  	slot->view_overlay = gtk_overlay_new ();
  	gtk_widget_add_events (slot->view_overlay,
  			       GDK_ENTER_NOTIFY_MASK |
-@@ -622,7 +620,6 @@
- 			       remove_all,
- 			       slot->extra_location_widgets);
- 	gtk_widget_hide (slot->extra_location_widgets);
--    slot->cache_bar = NULL;
- }
- 
- void
 reverted:
 --- b/src/nemo-window-slot.h
 +++ a/src/nemo-window-slot.h

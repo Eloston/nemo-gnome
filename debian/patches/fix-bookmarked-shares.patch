@@ -1,10 +1,8 @@
-diff --git a/libnemo-private/nemo-bookmark.c b/libnemo-private/nemo-bookmark.c
-index b4d0632..1cd7e3d 100644
 --- a/libnemo-private/nemo-bookmark.c
 +++ b/libnemo-private/nemo-bookmark.c
 @@ -257,7 +257,10 @@ nemo_bookmark_connect_file (NemoBookmark *bookmark)
  
-                bookmark->details->file = nemo_file_get (bookmark->details->location);
+ 		bookmark->details->file = nemo_file_get (bookmark->details->location);
  
 -        g_assert (!nemo_file_is_gone (bookmark->details->file));
 +        if (nemo_file_is_gone (bookmark->details->file)) {
