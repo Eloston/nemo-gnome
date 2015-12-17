@@ -4,6 +4,12 @@ nemo (2.8.6-1~gnome) stretch; urgency=low
 
  -- Eloston <eloston@mail.com>  Thu, 17 Dec 2015 00:00:00 +0000
 
+nemo (2.6.7-1~gnome) stretch; urgency=low
+
+  * Based off of nemo master branch source b2f1104e93ae79586933059d42f54fc402d6de85 and 2.6.7-2~webupd8~vivid00
+
+ -- Eloston <eloston@mail.com>  Fri, 02 Oct 2015 00:00:00 +0000
+
 nemo (2.6.5-1~gnome) jessie; urgency=low
 
   * Based off of nemo master branch source 2015-06-09 and 2.6.5-2~webupd8~vivid02
