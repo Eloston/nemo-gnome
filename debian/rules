@@ -26,11 +26,6 @@ override_dh_strip:
 override_dh_install:
 	sed 's@TYPELIBDIR@${TYPELIBDIR}@' debian/gir1.2-nemo-3.0.install.in > debian/gir1.2-nemo-3.0.install
 	dh_install --list-missing
-	# these don't work in non-Cinnamon desktops:
-	rm -f debian/nemo-data/usr/share/nemo/actions/add-desklets.nemo_action
-	rm -f debian/nemo-data/usr/share/nemo/actions/90_new-workspace.nemo_action
-	rm -f debian/nemo-data/usr/share/nemo/actions/91_delete-workspace.nemo_action
-	rm -f debian/nemo-data/usr/share/nemo/actions/92_show-expo.nemo_action
 
 override_dh_makeshlibs:
 	dh_makeshlibs -Xusr/lib/nemo/extensions-3.0/

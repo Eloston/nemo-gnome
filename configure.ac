@@ -23,7 +23,7 @@ dnl Interface break is not allowed.
 m4_define(nemo_extension_current,  5)
 m4_define(nemo_extension_revision, 0)
 
-AC_INIT(nemo, 2.8.6.19-daschuer https://github.com/daschuer/nemo)
+AC_INIT(nemo, 2.8.6-gnome https://github.com/Eloston/nemo-gnome)
 
 dnl ===========================================================================
 
@@ -57,7 +57,7 @@ AC_CHECK_LIB(m, floor)
 
 dnl ==========================================================================
 
-GETTEXT_PACKAGE=nemo_daschuer
+GETTEXT_PACKAGE=nemo_gnome
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE",
                    [the gettext translation domain])

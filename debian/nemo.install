@@ -4,7 +4,3 @@ usr/lib/nemo/nemo-extensions-list
 usr/share/applications
 usr/share/dbus-1
 usr/share/man
-etc/xdg/autostart
-debian/nemo-home.desktop usr/share/applications
-debian/nemo-mount-archive.desktop usr/share/applications
-debian/nemo-folder-handler.desktop usr/share/applications
