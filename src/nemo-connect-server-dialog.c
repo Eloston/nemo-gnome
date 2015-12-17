@@ -280,7 +280,7 @@ check_uri_entry (NemoConnectServerDialog *dialog)
 
 #if	GTK_CHECK_VERSION(3,13,2)
 	// gtk 3.13.2 supports RTL icons in GtkIconTheme
-    const gboolean rtl = false; 
+    const gboolean rtl = FALSE;
 #else 
 	const gboolean rtl = gtk_widget_get_direction (GTK_WIDGET (dialog)) == GTK_TEXT_DIR_RTL;
 #endif	

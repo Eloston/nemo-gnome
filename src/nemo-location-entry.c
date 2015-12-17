@@ -660,7 +660,7 @@ nemo_location_entry_set_secondary_action (NemoLocationEntry *entry,
 
 #if	GTK_CHECK_VERSION(3,13,2)
 	// gtk 3.13.2 supports RTL icons in GtkIconTheme
-    const gboolean rtl = false; 
+    const gboolean rtl = FALSE;
 #else 
 	const gboolean rtl = gtk_widget_get_direction (GTK_WIDGET (entry)) == GTK_TEXT_DIR_RTL;
 #endif	

@@ -791,7 +791,7 @@ nemo_file_management_properties_dialog_setup (GtkBuilder *builder, GtkWindow *wi
 			   NEMO_FILE_MANAGEMENT_PROPERTIES_FOLDERS_FIRST_WIDGET,
 			   NEMO_PREFERENCES_SORT_DIRECTORIES_FIRST);
 #if GTK_CHECK_VERSION(3, 12, 0)
-	g_signal_connect (gtk_builder_get_object (builder, NAUTILUS_FILE_MANAGEMENT_PROPERTIES_FOLDERS_FIRST_WIDGET),
+	g_signal_connect (gtk_builder_get_object (builder, NEMO_FILE_MANAGEMENT_PROPERTIES_FOLDERS_FIRST_WIDGET),
                           "notify::active",
                           G_CALLBACK (set_gtk_filechooser_sort_first), NULL);
 #endif
