@@ -1,6 +1,4 @@
 libnemo-extension.so.1 libnemo-extension1 #MINVER#
- eel_accessibility_create_derived_type@Base 2.6.5
- eel_accessibility_for_object@Base 2.6.5
  eel_accessibility_get_atk_object@Base 2.6.5
  eel_accessibility_get_gobject@Base 2.6.5
  eel_accessibility_set_atk_object_return@Base 2.6.5
@@ -12,7 +10,6 @@ libnemo-extension.so.1 libnemo-extension1 #MINVER#
  eel_accessibility_text_get_text_at_offset@Base 2.6.5
  eel_accessibility_text_get_text_before_offset@Base 2.6.5
  eel_accessible_text_get_type@Base 2.6.5
- eel_add_weak_pointer@Base 2.6.5
  eel_after_check@Base 2.6.5
  eel_after_check_function@Base 2.6.5
  eel_before_check@Base 2.6.5
@@ -24,6 +21,7 @@ libnemo-extension.so.1 libnemo-extension1 #MINVER#
  eel_canvas_get_scroll_region@Base 2.6.5
  eel_canvas_get_type@Base 2.6.5
  eel_canvas_group_get_type@Base 2.6.5
+ eel_canvas_item_accessible_get_type@Base 2.8.6-2~gnome
  eel_canvas_item_construct@Base 2.6.5
  eel_canvas_item_destroy@Base 2.6.5
  eel_canvas_item_get_bounds@Base 2.6.5
@@ -66,7 +64,6 @@ libnemo-extension.so.1 libnemo-extension1 #MINVER#
  eel_check_rectangle_result@Base 2.6.5
  eel_check_string_result@Base 2.6.5
  eel_create_colorized_pixbuf@Base 2.6.5
- eel_create_darkened_pixbuf@Base 2.6.5
  eel_create_info_dialog@Base 2.6.5
  eel_create_question_dialog@Base 2.6.5
  eel_create_spotlight_pixbuf@Base 2.6.5
@@ -96,32 +93,19 @@ libnemo-extension.so.1 libnemo-extension1 #MINVER#
  eel_filename_get_extension_offset@Base 2.6.5
  eel_filename_get_rename_region@Base 2.6.5
  eel_filename_strip_extension@Base 2.6.5
- eel_g_date_new_tm@Base 2.6.5
  eel_g_hash_table_safe_for_each@Base 2.6.5
- eel_g_list_equal@Base 2.6.5
- eel_g_list_exactly_one_item@Base 2.6.5
- eel_g_list_more_than_one_item@Base 2.6.5
  eel_g_list_partition@Base 2.6.5
  eel_g_lists_sort_and_check_for_intersection@Base 2.6.5
  eel_g_object_list_copy@Base 2.6.5
- eel_g_object_list_ref@Base 2.6.5
- eel_g_settings_add_auto_strv_as_quarks@Base 2.6.5
- eel_g_str_list_alphabetize@Base 2.6.5
  eel_g_str_list_copy@Base 2.6.5
  eel_g_str_list_equal@Base 2.6.5
- eel_g_str_list_index@Base 2.6.5
  eel_g_strv_equal@Base 2.6.5
- eel_g_strv_find@Base 2.6.5
  eel_gdk_parse_geometry@Base 2.6.5
- eel_get_system_time@Base 2.6.5
  eel_gnome_open_terminal_on_screen@Base 2.6.5
- eel_gtk_label_make_bold@Base 2.6.5
  eel_gtk_menu_append_separator@Base 2.6.5
  eel_gtk_menu_insert_separator@Base 2.6.5
  eel_gtk_message_dialog_set_details_label@Base 2.6.5
- eel_gtk_tree_view_set_activate_on_single_click@Base 2.6.5
  eel_gtk_window_get_geometry_string@Base 2.6.5
- eel_gtk_window_set_initial_geometry@Base 2.6.5
  eel_gtk_window_set_initial_geometry_from_string@Base 2.6.5
  eel_irect_contains_point@Base 2.6.5
  eel_irect_copy@Base 2.6.5
@@ -135,8 +119,6 @@ libnemo-extension.so.1 libnemo-extension1 #MINVER#
  eel_irect_offset_by@Base 2.6.5
  eel_irect_scale_by@Base 2.6.5
  eel_irect_union@Base 2.6.5
- eel_istr_has_prefix@Base 2.6.5
- eel_make_color_inactive@Base 2.6.5
  eel_make_valid_utf8@Base 2.6.5
  eel_make_warnings_and_criticals_stop_in_debugger@Base 2.6.5
  eel_pop_up_context_menu@Base 2.6.5
@@ -144,9 +126,7 @@ libnemo-extension.so.1 libnemo-extension1 #MINVER#
  eel_ref_str_new@Base 2.6.5
  eel_ref_str_ref@Base 2.6.5
  eel_ref_str_unref@Base 2.6.5
- eel_remove_weak_pointer@Base 2.6.5
  eel_report_check_failure@Base 2.6.5
- eel_round@Base 2.6.5
  eel_run_lib_self_checks@Base 2.6.5
  eel_run_simple_dialog@Base 2.6.5
  eel_self_check_glib_extensions@Base 2.6.5
@@ -160,14 +140,11 @@ libnemo-extension.so.1 libnemo-extension1 #MINVER#
  eel_str_capitalize@Base 2.6.5
  eel_str_double_underscores@Base 2.6.5
  eel_str_escape_spaces@Base 2.6.5
- eel_str_is_empty@Base 2.6.5
  eel_str_middle_truncate@Base 2.6.5
  eel_str_replace_substring@Base 2.6.5
  eel_str_strip_substring_and_after@Base 2.6.5
  eel_strdup_printf_with_custom@Base 2.6.5
- eel_strdup_strftime@Base 2.6.5
  eel_strdup_vprintf_with_custom@Base 2.6.5
- eel_stretch_frame_image@Base 2.6.5
  eel_timed_wait_start@Base 2.6.5
  eel_timed_wait_start_with_duration@Base 2.6.5
  eel_timed_wait_stop@Base 2.6.5
