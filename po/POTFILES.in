@@ -97,4 +97,12 @@ src/nemo-window-private.h
 src/nemo-window-slot.c
 src/nemo-x-content-bar.c
 src/unity-quicklist-handler.h
+src/nemo-action-config-widget.c
+src/nemo-config-base-widget.c
+src/nemo-extension-config-widget.c
+src/nemo-interesting-folder-bar.c
+src/nemo-open-with-main.c
+src/nemo-plugin-manager.c
+src/nemo-script-config-widget.c
+src/nemo-thumbnail-problem-bar.c
 

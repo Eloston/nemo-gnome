@@ -2,7 +2,7 @@ Source: nemo
 Section: gnome
 Priority: optional
 Maintainer: Linux Mint <root@linuxmint.com>
-Build-Depends: debhelper (>= 8),
+Build-Depends: debhelper (>= 9),
                dh-autoreconf,
                gnome-pkg-tools (>= 0.13),
                libglib2.0-dev (>= 2.37.3),
@@ -29,11 +29,15 @@ Build-Depends: debhelper (>= 8),
                libgtk-3-doc,
                python-polib,
                python-gi
+Standards-Version: 3.9.6
+XS-Testsuite: autopkgtest
 Homepage: https://github.com/Eloston/nemo-gnome
-Standards-Version: 3.9.2
+Vcs-Browser: https://github.com/Eloston/nemo-gnome.git
+Vcs-Git: git://github.com/Eloston/nemo-gnome.git
 
 Package: nemo
 Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          nemo-data (= ${binary:Version}),
@@ -54,7 +58,7 @@ Breaks: gnome-volume-manager (<< 2.24),
         rhythmbox (<< 0.12),
         gnome-session (<< 2.28),
         gnome-bluetooth (<< 3.0)
-Description: file manager and graphical shell for Cinnamon
+Description: File manager and graphical shell for Cinnamon
  Nemo is the official file manager for the Cinnamon desktop. It allows
  to browse directories, preview files and launch applications associated
  with them. It is also responsible for handling the icons on the Cinnamon
@@ -65,12 +69,12 @@ Description: file manager and graphical shell for Cinnamon
 
 Package: nemo-dbg
 Section: debug
-Architecture: any
 Priority: extra
+Architecture: any
 Depends: nemo (= ${binary:Version}),
          ${misc:Depends}
 Replaces: libnemo-extension1-dbg
-Description: file manager and graphical shell for Cinnamon - debugging version
+Description: File manager and graphical shell for Cinnamon (Debugging symbols)
  Nemo is the official file manager for the Cinnamon desktop. It allows
  to browse directories, preview files and launch applications associated
  with them. It is also responsible for handling the icons on the Cinnamon
@@ -79,50 +83,52 @@ Description: file manager and graphical shell for Cinnamon - debugging version
  Several icon themes and components for viewing different kinds of files
  are available in separate packages.
  .
- This development package contains unstripped binaries compiled with
- debugging symbols needed by gdb.
+ This development package contains the debugging symbols of nemo and its
+ extension library.
 
 Package: libnemo-extension1
-Architecture: any
 Section: libs
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
          ${shlibs:Depends}
-Provides: libnemo-extension1a
-Replaces: libnemo-extension1a
-breaks: libnemo-extension1a
-Description: libraries for nemo components - runtime version
- Nemo is the official file manager and graphical shell for the
- Cinnamon desktop.
+Description: Nemo component system facilities
+ Nemo is the official file manager for the Cinnamon desktop. It allows
+ to browse directories, preview files and launch applications associated
+ with them. It is also responsible for handling the icons on the Cinnamon
+ desktop. It works on local and remote filesystems.
  .
- This package contains a few runtime libraries needed by nemo's extensions.
+ This package contains the shared library needed by the nemo extensions.
 
 Package: libnemo-extension-dev
-Architecture: any
 Section: libdevel
+Architecture: any
 Depends: libnemo-extension1 (= ${binary:Version}),
          gir1.2-nemo-3.0 (= ${binary:Version}),
          libglib2.0-dev (>= 2.37.3),
          libgtk-3-dev (>= 3.9.10),
          ${shlibs:Depends},
          ${misc:Depends}
-Description: libraries for nemo components - development version
- Nemo is the official file manager and graphical shell for the
- Cinnamon desktop.
+Description: Nemo component system facilities (development files)
+ Nemo is the official file manager for the Cinnamon desktop. It allows
+ to browse directories, preview files and launch applications associated
+ with them. It is also responsible for handling the icons on the Cinnamon
+ desktop. It works on local and remote filesystems.
  .
- This package provides the necessary development libraries and include
- files to develop and compile Nemo extensions.
+ This package contains the files needed to compile and link nemo extensions.
 
 Package: gir1.2-nemo-3.0
-Architecture: any
 Section: introspection
+Architecture: any
 Depends: ${gir:Depends},
          ${shlibs:Depends},
          ${misc:Depends}
-Conflicts: gir1.0-nemo-3.0
-Replaces: gir1.0-nemo-3.0
-Description: libraries for nemo components - gir bindings
- Nemo is the official file manager and graphical shell for the
- Cinnamon desktop.
+Description: Nemo component system facilities (gir bindings)
+ Nemo is the official file manager for the Cinnamon desktop. It allows
+ to browse directories, preview files and launch applications associated
+ with them. It is also responsible for handling the icons on the Cinnamon
+ desktop. It works on local and remote filesystems.
  .
  This package can be used by other packages using the GIRepository format to
  generate dynamic bindings.
@@ -130,11 +136,14 @@ Description: libraries for nemo components - gir bindings
 Package: nemo-data
 Architecture: all
 Depends: ${misc:Depends},
-         python
+         python,
+         ${python:Depends}
 Suggests: nemo
-Description: data files for nemo
- Nemo is the official file manager and graphical shell for the
- Cinnamon desktop.
+Description: File manager and graphical shell for Cinnamon (data files)
+ Nemo is the official file manager for the Cinnamon desktop. It allows
+ to browse directories, preview files and launch applications associated
+ with them. It is also responsible for handling the icons on the Cinnamon
+ desktop. It works on local and remote filesystems.
  .
  This package contains pictures, localization files and other data
  needed by nemo.
